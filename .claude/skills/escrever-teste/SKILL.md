@@ -10,6 +10,7 @@ description: Como escrever testes neste projeto (node:test, um teste por critér
 - Regra de negócio se testa direto em `src/reservas.js`, sem subir servidor. Rota HTTP se testa em `test/app.test.js`.
 - Nunca use o relógio real: passe `agora` como parâmetro (ex.: `new Date('2026-12-01T08:00:00-03:00')`).
 - Teste o caso de borda junto: horário encostado (16h–18h depois de 14h–16h) não é conflito.
+- Teste que espera erro confere o status **e** a mensagem (`assert.match(r.erro, /…/)`): vários erros compartilham o mesmo status (400), então só o status não prova qual regra recusou. (lição L-01)
 
 ## Modelo
 ```js

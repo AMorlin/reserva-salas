@@ -29,4 +29,5 @@ regra de negócio (por exemplo, a ordem 400 × 404), a escolha teria ficado com 
   todas estarem respondidas. Um 'pode seguir' não responde perguntas: repita-as."
 - No fluxo do grupo: responder às perguntas do plano antes de dar o próximo comando.
 
-**Virou regra?** não (proposta acima, aguardando decisão do grupo)
+**Virou regra?** sim: `AGENTS.md`, em "Nunca faça" e não em "Como trabalhar" como estava na sugestão (commit `07237e9`):
+"Alterar arquivos com pergunta do plano em aberto: 'pode seguir' não responde perguntas; repita-as."
