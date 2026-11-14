@@ -26,6 +26,7 @@ Quem não registra o erro, repete o erro.
 - **Seguiu sem a nossa resposta:** propôs 3 decisões para confirmarmos (mensagem solta, manter o teste de fuso, ordem das validações). Quando pedimos "escreva o teste", ele aplicou as próprias sugestões sem a gente ter respondido. Avisou no final, mas o AGENTS.md diz "se algo estiver ambíguo, pergunte antes de codar". → virou a lição `docs/licoes/L-02-seguiu-sem-resposta-das-perguntas.md`
 
 **O que nós decidimos (e o agente não podia decidir):**
+- Seguir sem a revisão por IA no CI (sem `ANTHROPIC_API_KEY`): o job `revisar` aparece verde, mas foi pulado. A revisão foi feita pelo subagente `revisor` local, que aprovou o diff duas vezes.
 - Aplicar ou não as sugestões do revisor (atualizar a "Situação" da SPEC, reforçar o teste de fuso).
 - Fazer o commit (o agente criou o branch `feat/ca-3-reserva-no-passado` em vez de commitar na `main`).
 
