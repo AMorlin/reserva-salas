@@ -33,4 +33,7 @@ defesa.
 > Teste que espera erro confere o status **e** a mensagem (`assert.match(r.erro, /…/)`). Vários erros
 > compartilham o mesmo status (400), então só o status não prova qual regra recusou.
 
-**Virou regra?** não (proposta acima, aguardando decisão do grupo)
+**Virou regra?** sim, em três lugares:
+- `AGENTS.md`, em "Nunca faça" (commit `07237e9`);
+- skill `mensagem-de-erro`, em "Antes de entregar" (commit `07237e9`);
+- skill `escrever-teste`, em "Regras", como estava na sugestão (commit seguinte, junto com esta atualização).
