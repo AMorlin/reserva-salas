@@ -1,6 +1,6 @@
 # SPEC-001 · Reservar sala
 
-- **Situação:** aprovada · CA-1 pronto · CA-3 no Lab 1 · CA-2 no Lab 3
+- **Situação:** aprovada · CA-1 pronto · CA-3 pronto · CA-2 no Lab 3
 - **Dono:** coordenação do curso
 
 ## Problema

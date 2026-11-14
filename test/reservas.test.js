@@ -35,5 +35,25 @@ test('fim antes do início devolve 400', () => {
   assert.equal(r.status, 400);
 });
 
-// Lab 1: escreva aqui o teste do CA-3 ANTES de mexer em src/reservas.js.
+test('CA-3: reserva que começa no passado devolve 400', () => {
+  // Dado: agora são 08h. Quando: peço das 07h às 09h (começa no passado, termina no futuro)
+  const r = criarReserva([], pedido({ inicio: '2026-12-01T07:00:00-03:00', fim: '2026-12-01T09:00:00-03:00' }), AGORA);
+  // Então
+  assert.equal(r.status, 400);
+  assert.match(r.erro, /passado/i);
+});
+
+test('CA-3 (borda): reserva que começa exatamente agora é aceita', () => {
+  // SPEC: só é passado se inicio < agora
+  const r = criarReserva([], pedido({ inicio: '2026-12-01T08:00:00-03:00', fim: '2026-12-01T10:00:00-03:00' }), AGORA);
+  assert.equal(r.status, 201);
+});
+
+test('CA-3 (fuso): instante no passado em outro fuso também devolve 400', () => {
+  // 10:30Z = 07:30 em -03:00, antes de AGORA (08:00 -03:00)
+  const r = criarReserva([], pedido({ inicio: '2026-12-01T10:30:00Z', fim: '2026-12-01T13:00:00Z' }), AGORA);
+  assert.equal(r.status, 400);
+  assert.match(r.erro, /passado/i);
+});
+
 // Lab 3: escreva aqui os testes do CA-2 ANTES de mexer em src/reservas.js.
